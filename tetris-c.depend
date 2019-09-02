@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1542326508 source:/mnt/hgfs/Semester IX/COE718/project/tetris-c/main.c
+1542326508 source:<absolute-path-to-dir>tetris-c/main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -7,10 +7,10 @@
 	<ncurses.h>
 	"tetris.h"
 
-1542323216 /mnt/hgfs/Semester IX/COE718/project/tetris-c/tetris.h
+1542323216 <absolute-path-to-dir>/tetris-c/tetris.h
 	"tetrisPieces.h"
 
-1542165560 /mnt/hgfs/Semester IX/COE718/project/tetris-c/tetrisPieces.h
+1542165560 <absolute-path-to-dir>/tetris-c/tetrisPieces.h
 	<stdlib.h>
 
 1527062907 /usr/include/ncursesw/ncurses.h
