@@ -1,0 +1,118 @@
+# depslib dependency file v1.0
+1542326508 source:/mnt/hgfs/Semester IX/COE718/project/tetris-c/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	<ncurses.h>
+	"tetris.h"
+
+1542323216 /mnt/hgfs/Semester IX/COE718/project/tetris-c/tetris.h
+	"tetrisPieces.h"
+
+1542165560 /mnt/hgfs/Semester IX/COE718/project/tetris-c/tetrisPieces.h
+	<stdlib.h>
+
+1527062907 /usr/include/ncursesw/ncurses.h
+	<ncursesw/ncurses_dll.h>
+	<stdint.h>
+	<stdio.h>
+	<stdarg.h>
+	<stddef.h>
+	<stdbool.h>
+	<libutf8.h>
+	<wchar.h>
+	<ncursesw/unctrl.h>
+
+1523909660 /usr/include/stdio.h
+	<bits/libc-header-start.h>
+	<stddef.h>
+	<bits/types.h>
+	<bits/types/__FILE.h>
+	<bits/types/FILE.h>
+	<bits/libio.h>
+	<stdarg.h>
+	<bits/stdio_lim.h>
+	<bits/sys_errlist.h>
+	<bits/getopt_posix.h>
+	<bits/stdio.h>
+	<bits/stdio2.h>
+	<bits/stdio-ldbl.h>
+
+1523909660 /usr/include/stdlib.h
+	<bits/libc-header-start.h>
+	<stddef.h>
+	<bits/waitflags.h>
+	<bits/waitstatus.h>
+	<bits/floatn.h>
+	<bits/types/locale_t.h>
+	<sys/types.h>
+	<alloca.h>
+	<bits/stdlib-bsearch.h>
+	<bits/stdlib-float.h>
+	<bits/stdlib.h>
+	<bits/stdlib-ldbl.h>
+
+1523909660 /usr/include/alloca.h
+	<features.h>
+	<stddef.h>
+
+1523909660 /usr/include/features.h
+	<stdc-predef.h>
+	<sys/cdefs.h>
+	<gnu/stubs.h>
+
+1523909660 /usr/include/stdc-predef.h
+
+1523909660 /usr/include/time.h
+	<features.h>
+	<stddef.h>
+	<bits/time.h>
+	<bits/types/clock_t.h>
+	<bits/types/time_t.h>
+	<bits/types/struct_tm.h>
+	<bits/types/struct_timespec.h>
+	<bits/types/clockid_t.h>
+	<bits/types/timer_t.h>
+	<bits/types/struct_itimerspec.h>
+	<bits/types/locale_t.h>
+
+1527062907 /usr/include/ncursesw/ncurses_dll.h
+
+1523909660 /usr/include/stdint.h
+	<bits/libc-header-start.h>
+	<bits/types.h>
+	<bits/wchar.h>
+	<bits/wordsize.h>
+	<bits/stdint-intn.h>
+	<bits/stdint-uintn.h>
+
+1523909660 /usr/include/wchar.h
+	<bits/libc-header-start.h>
+	<bits/floatn.h>
+	<stddef.h>
+	<stdarg.h>
+	<bits/wchar.h>
+	<bits/types/wint_t.h>
+	<bits/types/mbstate_t.h>
+	<bits/types/__FILE.h>
+	<bits/types/FILE.h>
+	<bits/types/locale_t.h>
+	<bits/wctype-wchar.h>
+	<bits/wchar2.h>
+	<bits/wchar-ldbl.h>
+
+1527062907 /usr/include/ncursesw/unctrl.h
+	<ncursesw/curses.h>
+
+1527062907 /usr/include/ncursesw/curses.h
+	<ncursesw/ncurses_dll.h>
+	<stdint.h>
+	<stdio.h>
+	<stdarg.h>
+	<stddef.h>
+	<stdbool.h>
+	<libutf8.h>
+	<wchar.h>
+	<ncursesw/unctrl.h>
+

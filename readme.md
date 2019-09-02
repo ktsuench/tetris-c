@@ -8,7 +8,7 @@ Have NCurses library installed.
 
 ## Building Exectuable
 
-Run `gcc -o tetris -lncurses` to create the executable.
+Open in CodeBlocks and build from there.
 
 ## License
 

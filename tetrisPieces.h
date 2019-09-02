@@ -11,14 +11,16 @@ typedef enum Orientation {
 } Rotation;
 
 typedef struct TetrisBlock {
-  unsigned int coords[4][4];
+  int coords[4][4];
   CellType type;
   Rotation orientation;
-  unsigned int topRow;
-  unsigned int bottomRow;
+  int topRow;
+  int bottomRow;
+  int startCol;
+  int endCol;
   struct TetrisBlock *nextOrientation;
-  unsigned int row;
-  unsigned int col;
+  int row;
+  int col;
 } Block;
 
 Block TTLEFT = {
@@ -27,7 +29,7 @@ Block TTLEFT = {
     {0,1,1,0},
     {0,1,0,0},
     {0,0,0,0}
-  }, TT, OLEFT, 1, 3, NULL
+  }, TT, OLEFT, 1, 3, 2, 3, NULL
 };
 Block TTDOWN = {
   {
@@ -35,7 +37,7 @@ Block TTDOWN = {
     {0,0,1,0},
     {0,1,1,1},
     {0,0,0,0}
-  }, TT, ODOWN, 2, 3,
+  }, TT, ODOWN, 2, 3, 2, 4,
   (struct TetrisBlock *) &TTLEFT
 };
 Block TTRIGHT = {
@@ -44,7 +46,7 @@ Block TTRIGHT = {
     {0,0,1,1},
     {0,0,0,1},
     {0,0,0,0}
-  }, TT, ORIGHT, 1, 3,
+  }, TT, ORIGHT, 1, 3, 3, 4,
   (struct TetrisBlock *) &TTDOWN
 };
 Block TTUP = {
@@ -53,7 +55,7 @@ Block TTUP = {
     {0,0,1,0},
     {0,0,0,0},
     {0,0,0,0}
-  }, TT, OUP, 1, 2,
+  }, TT, OUP, 1, 2, 2, 4,
   (struct TetrisBlock *) &TTRIGHT
 };
 Block TLLEFT = {
@@ -62,7 +64,7 @@ Block TLLEFT = {
     {0,1,0,0},
     {0,1,1,0},
     {0,0,0,0}
-  }, TL, OLEFT, 1, 3, NULL
+  }, TL, OLEFT, 1, 3, 2, 3, NULL
 };
 Block TLDOWN = {
   {
@@ -70,7 +72,7 @@ Block TLDOWN = {
     {0,0,0,1},
     {0,1,1,1},
     {0,0,0,0}
-  }, TL, ODOWN, 2, 3,
+  }, TL, ODOWN, 2, 3, 2, 4,
   (struct TetrisBlock *) &TLLEFT
 };
 Block TLRIGHT = {
@@ -79,7 +81,7 @@ Block TLRIGHT = {
     {0,0,0,1},
     {0,0,0,1},
     {0,0,0,0}
-  }, TL, ORIGHT, 1, 3,
+  }, TL, ORIGHT, 1, 3, 3, 4,
   (struct TetrisBlock *) &TLDOWN
 };
 Block TLUP = {
@@ -88,7 +90,7 @@ Block TLUP = {
     {0,1,0,0},
     {0,0,0,0},
     {0,0,0,0}
-  }, TL, OUP, 1, 2,
+  }, TL, OUP, 1, 2, 2, 4,
   (struct TetrisBlock *) &TLRIGHT
 };
 Block TJLEFT = {
@@ -97,7 +99,7 @@ Block TJLEFT = {
     {0,1,0,0},
     {0,1,0,0},
     {0,0,0,0}
-  }, TJ, OLEFT, 1, 3, NULL
+  }, TJ, OLEFT, 1, 3, 2, 3, NULL
 };
 Block TJDOWN = {
   {
@@ -105,7 +107,7 @@ Block TJDOWN = {
     {0,1,0,0},
     {0,1,1,1},
     {0,0,0,0}
-  }, TJ, ODOWN, 2, 3,
+  }, TJ, ODOWN, 2, 3, 2, 4,
   (struct TetrisBlock *) &TJLEFT
 };
 Block TJRIGHT = {
@@ -114,7 +116,7 @@ Block TJRIGHT = {
     {0,0,0,1},
     {0,0,1,1},
     {0,0,0,0}
-  }, TJ, ORIGHT, 1, 3,
+  }, TJ, ORIGHT, 1, 3, 3, 4,
   (struct TetrisBlock *) &TJDOWN
 };
 Block TJUP = {
@@ -123,7 +125,7 @@ Block TJUP = {
     {0,0,0,1},
     {0,0,0,0},
     {0,0,0,0}
-  }, TJ, OUP, 1, 2,
+  }, TJ, OUP, 1, 2, 2, 4,
   (struct TetrisBlock *) &TJRIGHT
 };
 Block TIRIGHT = {
@@ -132,7 +134,7 @@ Block TIRIGHT = {
     {0,1,0,0},
     {0,1,0,0},
     {0,1,0,0}
-  }, TI, ORIGHT, 1, 4, NULL
+  }, TI, ORIGHT, 1, 4, 2, 2, NULL
 };
 Block TIUP = {
   {
@@ -140,7 +142,7 @@ Block TIUP = {
     {0,0,0,0},
     {0,0,0,0},
     {0,0,0,0}
-  }, TI, OUP, 1, 1,
+  }, TI, OUP, 1, 1, 1, 4,
   (struct TetrisBlock *) &TIRIGHT
 };
 Block TSRIGHT = {
@@ -149,7 +151,7 @@ Block TSRIGHT = {
     {0,0,1,1},
     {0,0,0,1},
     {0,0,0,0}
-  }, TS, ORIGHT, 1, 3, NULL
+  }, TS, ORIGHT, 1, 3, 3, 4, NULL
 };
 Block TSUP = {
   {
@@ -157,7 +159,7 @@ Block TSUP = {
     {0,1,1,0},
     {0,0,0,0},
     {0,0,0,0}
-  }, TS, OUP, 1, 2,
+  }, TS, OUP, 1, 2, 2, 4,
   (struct TetrisBlock *) &TSRIGHT
 };
 Block TZRIGHT = {
@@ -166,7 +168,7 @@ Block TZRIGHT = {
     {0,0,1,1},
     {0,0,1,0},
     {0,0,0,0}
-  }, TZ, ORIGHT, 1, 2, NULL
+  }, TZ, ORIGHT, 1, 3, 3, 4, NULL
 };
 Block TZUP = {
   {
@@ -174,7 +176,7 @@ Block TZUP = {
     {0,0,1,1},
     {0,0,0,0},
     {0,0,0,0}
-  }, TZ, OUP, 1, 2,
+  }, TZ, OUP, 1, 2, 2, 4,
   (struct TetrisBlock *) &TZRIGHT
 };
 Block TOUP = {
@@ -183,7 +185,7 @@ Block TOUP = {
     {0,1,1,0},
     {0,0,0,0},
     {0,0,0,0}
-  }, TO, OUP, 1, 2, NULL
+  }, TO, OUP, 1, 2, 2, 3, NULL
 };
 
 typedef struct TetrisBlockPtr {
